@@ -1,0 +1,13 @@
+version: 0.1
+#tools:
+#  definitions:
+#    - name: clang-tidy
+#      environment:
+#        - name: PATH
+#          list: []
+lint:
+  definitions:
+    - name: clang-tidy
+      commands:
+        - name: lint
+          run: /usr/bin/clang-tidy --export-fixes=${tmpfile} ${target} -p ${compile_commands_dir}
